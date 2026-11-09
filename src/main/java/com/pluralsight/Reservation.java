@@ -41,12 +41,13 @@ public class Reservation {
         isWeekend = weekend;
     }
 
-    public double getReservationTotal(String roomType, double price, int numberOfNights, boolean isWeekend) {
-        double reservationTotal;
+    public double getReservationTotal(double price, int numberOfNights, boolean isWeekend) {
+        double reservationTotal = price * numberOfNights;
 
-        if (roomType.equals("king")) {
-
+        if (isWeekend) {
+            reservationTotal = (price * numberOfNights) * 1.10;
         }
+
         return reservationTotal;
     }
 }
