@@ -41,11 +41,11 @@ public class Reservation {
         isWeekend = weekend;
     }
 
-    public double getReservationTotal(double price, int numberOfNights, boolean isWeekend) {
-        double reservationTotal = price * numberOfNights;
+    public double getReservationTotal() {
+        double reservationTotal = this.price * this.numberOfNights;
 
-        if (isWeekend) {
-            reservationTotal = (price * numberOfNights) * 1.10;
+        if (this.isWeekend) {
+            reservationTotal = (this.price * this.numberOfNights) * 1.10;
         }
 
         return reservationTotal;
