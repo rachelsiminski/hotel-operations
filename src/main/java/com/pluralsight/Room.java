@@ -4,10 +4,10 @@ public class Room {
     private int numberOfBeds;
     private double price;
     private boolean isOccupied;
-    private boolean isAvailable;
+    private boolean isDirty;
 
-    public Room(boolean isAvailable, boolean isOccupied, double price, int numberOfBeds) {
-        this.isAvailable = isAvailable;
+    public Room(boolean isDirty, boolean isOccupied, double price, int numberOfBeds) {
+        this.isDirty = isDirty;
         this.isOccupied = isOccupied;
         this.price = price;
         this.numberOfBeds = numberOfBeds;
@@ -34,10 +34,14 @@ public class Room {
         isOccupied = occupied;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
+    public boolean isDirty() {
+        return isDirty;
     }
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setDirty(boolean dirty) {
+        isDirty = dirty;
+    }
+
+    public boolean isAvailable() {
+        return !this.isOccupied && !this.isDirty;
     }
 }
