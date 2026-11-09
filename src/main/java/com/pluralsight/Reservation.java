@@ -21,10 +21,19 @@ public class Reservation {
     }
 
     public double getPrice() {
+        double price = 0;
+
+        if (this.roomType == "king") {
+            price = 139.00;
+        }
+        else if (this.roomType == "double") {
+            price = 124.00;
+        }
+        if (this.isWeekend) {
+            price = price * 1.10;
+        }
+
         return price;
-    }
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public int getNumberOfNights() {
@@ -42,12 +51,6 @@ public class Reservation {
     }
 
     public double getReservationTotal() {
-        double reservationTotal = this.price * this.numberOfNights;
-
-        if (this.isWeekend) {
-            reservationTotal = (this.price * this.numberOfNights) * 1.10;
-        }
-
-        return reservationTotal;
+        return getPrice() * this.numberOfNights;
     }
 }
