@@ -60,7 +60,12 @@ public class Employee {
     }
 
     public double getOvertimeHours() {
-        return this.hoursWorked - 40;
+        if (this.hoursWorked > 40) {
+            return this.hoursWorked - 40;
+        }
+        else {
+            return 0;
+        }
     }
 
     public double getTotalPay() {
