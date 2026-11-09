@@ -3,6 +3,14 @@ package com.pluralsight;
 public class App {
     public static void main(String[] args) {
 
+        Room room1 = new Room(false, false, 139, 1);
+        Room room2 = new Room(true, false, 139, 1);
+        Room room3 = new Room(false, true, 139, 1);
+
+        System.out.println(room1.isAvailable());
+        System.out.println(room2.isAvailable());
+        System.out.println(room3.isAvailable());
+
         Reservation reservation = new Reservation("king", 139.00, 3, true);
 
         System.out.printf("Total: $%.2f", reservation.getReservationTotal());
