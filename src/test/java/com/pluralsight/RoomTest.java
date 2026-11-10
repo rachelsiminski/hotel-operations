@@ -51,4 +51,40 @@ class RoomTest {
         assertEquals(expectedDirty, room.isDirty());
     }
 
+    @Test
+    public void checkIn_should_not_work_for_occupied_room() {
+        Room room = new Room(true, true, 139.00, 1);
+        boolean expected = false;
+
+        // Act
+        room.checkIn();
+
+        // Assert
+        assertEquals(expected, room.checkIn());
+    }
+
+    @Test
+    public void checkIn_should_not_work_for_dirty_room() {
+        Room room = new Room(true, true, 139.00, 1);
+        boolean expected = false;
+
+        // Act
+        room.checkIn();
+
+        // Assert
+        assertEquals(expected, room.checkIn());
+    }
+
+    @Test
+    public void cleanRoom_should_not_work_for_occupied_room() {
+        Room room = new Room(true, true, 139.00, 1);
+        boolean expected = false;
+
+        // Act
+        room.cleanRoom();
+
+        // Assert
+        assertEquals(expected, room.cleanRoom());
+    }
+
 }

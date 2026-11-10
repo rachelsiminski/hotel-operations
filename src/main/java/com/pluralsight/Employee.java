@@ -87,7 +87,7 @@ public class Employee {
     }
 
     public void punchOut(int time) {
-        hoursWorked = time - startTime;
+        hoursWorked += time - startTime;
         punchedIn = false;
     }
 

@@ -45,16 +45,22 @@ public class Room {
         return !this.isOccupied && !this.isDirty;
     }
 
-    public void checkIn() {
+    public boolean checkIn() {
         this.setOccupied(true);
         this.setDirty(true);
+
+        return true;
     }
 
-    public void checkOut() {
+    public boolean checkOut() {
         this.setOccupied(false);
+
+        return false;
     }
 
-    public void cleanRoom() {
+    public boolean cleanRoom() {
         this.setDirty(false);
+
+        return true;
     }
 }
