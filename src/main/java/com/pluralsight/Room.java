@@ -44,4 +44,16 @@ public class Room {
     public boolean isAvailable() {
         return !this.isOccupied && !this.isDirty;
     }
+
+    public boolean checkIn() {
+        return this.isOccupied && this.isDirty;
+    }
+
+    public boolean checkOut() {
+        return !this.isOccupied && this.isDirty;
+    }
+
+    public boolean cleanRoom() {
+        return !this.isDirty;
+    }
 }
