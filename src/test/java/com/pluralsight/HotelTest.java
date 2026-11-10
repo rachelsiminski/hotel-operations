@@ -13,14 +13,13 @@ class HotelTest {
         int roomCount = 2;
         boolean suite = false;
 
+        int expectedBookedRooms = 12;
+
         // Act - ONE method call for testing
         hotel.bookRoom(roomCount, suite);
 
         // Assert - Write code to verify the method performed as expected
-        System.out.println("Available rooms (Expected 13): " + hotel.getAvailableRooms());
-        System.out.println("Available suites (Expected 7): " + hotel.getAvailableSuites());
-        System.out.println("Booked rooms (Expected 12): " + hotel.getBookedBasicRooms());
-        System.out.println("Booked suites (Expected 3): " + hotel.getBookedSuites());
+        assertEquals(expectedBookedRooms, hotel.getBookedBasicRooms());
     }
 
 }
