@@ -48,6 +48,10 @@ public class Employee {
         this.payRate = payRate;
     }
 
+    public boolean getPunchedIn() {
+        return punchedIn;
+    }
+
     public double getHoursWorked() {
         return hoursWorked;
     }
@@ -75,6 +79,16 @@ public class Employee {
 
     public double getTotalPay() {
         return (getRegularHours() * this.payRate) + (getOvertimeHours() * (payRate * 1.5));
+    }
+
+    public void punchIn(int time) {
+        startTime = time;
+        punchedIn = true;
+    }
+
+    public void punchOut(int time) {
+        hoursWorked = time - startTime;
+        punchedIn = false;
     }
 
     public void punchTimeCard(int time) {
