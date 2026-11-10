@@ -22,5 +22,11 @@ public class App {
         System.out.printf("Total Pay for %s: $%.2f%n", employee1.getName(), employee1.getTotalPay());
         System.out.printf("Total Pay for %s: $%.2f%n", employee2.getName(), employee2.getTotalPay());
 
+        employee1.punchTimeCard(10);
+        employee1.punchTimeCard(18);
+        System.out.println(employee1.getHoursWorked());
+        employee1.punchTimeCard(10);
+        employee1.punchTimeCard(18);
+        System.out.println(employee1.getHoursWorked());
     }
 }

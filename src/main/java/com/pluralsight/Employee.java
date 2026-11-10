@@ -74,14 +74,14 @@ public class Employee {
         return (getRegularHours() * this.payRate) + (getOvertimeHours() * (payRate * 1.5));
     }
 
-    public void punchIn(int time) {
-        startTime = time;
-        punchedIn = true;
-    }
-
-    public void punchOut(int time) {
-        hoursWorked = calculateTime(startTime, time);
-        punchedIn = false;
+    public void punchTimeCard(int time) {
+        if (!punchedIn) {
+            startTime = time;
+            punchedIn = true;
+        } else {
+            this.hoursWorked += calculateTime(startTime, time);
+            punchedIn = false;
+        }
     }
 
     public double calculateTime(double timeIn, double timeOut) {
