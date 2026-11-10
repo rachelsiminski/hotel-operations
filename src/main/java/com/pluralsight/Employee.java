@@ -87,12 +87,14 @@ public class Employee {
         }
     }
 
-    public void punchIn() {
-        LocalDateTime startTime = LocalDateTime.now();
-    }
-
-    public void punchOut() {
-        LocalDateTime end = LocalDateTime.now();
+    public void punchTimeCard() {
+        if (!punchedIn) {
+            LocalDateTime startTime = LocalDateTime.now();
+            punchedIn = true;
+        } else {
+            LocalDateTime end = LocalDateTime.now();
+            punchedIn = false;
+        }
     }
 
     public double calculateTime(double timeIn, double timeOut) {
