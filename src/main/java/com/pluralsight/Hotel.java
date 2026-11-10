@@ -1,0 +1,73 @@
+package com.pluralsight;
+
+public class Hotel {
+    private String name;
+    private int numberOfSuites;
+    private int numberOfRooms;
+    private int bookedSuites;
+    private int bookedBasicRooms;
+
+    Hotel (String name, int numberOfSuites, int numberOfRooms) {
+        this.name = name;
+        this.numberOfSuites = numberOfSuites;
+        this.numberOfRooms = numberOfRooms;
+        this.bookedSuites = 0;
+        this. bookedBasicRooms = 0;
+    }
+
+    Hotel (String name, int numberOfSuites, int numberOfRooms, int bookedSuites, int bookedBasicRooms) {
+        this.name = name;
+        this.numberOfSuites = numberOfSuites;
+        this.numberOfRooms = numberOfRooms;
+        this.bookedSuites = bookedSuites;
+        this.bookedBasicRooms = bookedBasicRooms;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNumberOfSuites() {
+        return numberOfSuites;
+    }
+
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public int getBookedSuites() {
+        return bookedSuites;
+    }
+
+    public int getBookedBasicRooms() {
+        return bookedBasicRooms;
+    }
+
+    public int getAvailableSuites() {
+        return this.numberOfSuites - this.bookedSuites;
+    }
+
+    public int getAvailableRooms() {
+        return this.numberOfRooms - this.bookedBasicRooms;
+    }
+
+    public boolean bookRoom (int roomCount, boolean suite) {
+        if (suite) {
+            if (getAvailableSuites() >= roomCount) {
+                this.bookedSuites += roomCount;
+                this.numberOfSuites -= roomCount;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (getAvailableRooms() >= roomCount) {
+                this.bookedBasicRooms += roomCount;
+                this.numberOfRooms -= roomCount;
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+}
