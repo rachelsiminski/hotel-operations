@@ -46,21 +46,33 @@ public class Room {
     }
 
     public boolean checkIn() {
-        this.setOccupied(true);
-        this.setDirty(true);
+        if (!isOccupied() && !isDirty()) {
+            this.isOccupied = true;
+            this.isDirty = true;
 
-        return true;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean checkOut() {
-        this.setOccupied(false);
+        if (isOccupied()) {
+            this.isOccupied = false;
 
-        return false;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean cleanRoom() {
-        this.setDirty(false);
+        if (!isOccupied() && isDirty()) {
+            this.isDirty = false;
 
-        return true;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
