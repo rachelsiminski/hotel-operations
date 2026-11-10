@@ -55,7 +55,6 @@ public class Hotel {
         if (suite) {
             if (getAvailableSuites() >= roomCount) {
                 this.bookedSuites += roomCount;
-                this.numberOfSuites -= roomCount;
                 return true;
             } else {
                 return false;
@@ -63,7 +62,6 @@ public class Hotel {
         } else {
             if (getAvailableRooms() >= roomCount) {
                 this.bookedBasicRooms += roomCount;
-                this.numberOfRooms -= roomCount;
                 return true;
             } else {
                 return false;
