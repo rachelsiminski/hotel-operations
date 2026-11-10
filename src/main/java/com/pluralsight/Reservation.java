@@ -21,19 +21,17 @@ public class Reservation {
     }
 
     public double getPrice() {
-        double price = 0;
-
-        if (this.roomType == "king") {
-            price = 139.00;
+        if (this.roomType.equalsIgnoreCase("king")) {
+            this.price = 139.00;
         }
-        else if (this.roomType == "double") {
-            price = 124.00;
+        else if (this.roomType.equalsIgnoreCase("double")) {
+            this.price = 124.00;
         }
         if (this.isWeekend) {
-            price = price * 1.10;
+            this.price = this.price * 1.10;
         }
 
-        return price;
+        return this.price;
     }
 
     public int getNumberOfNights() {
