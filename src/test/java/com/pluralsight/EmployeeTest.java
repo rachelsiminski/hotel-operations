@@ -44,4 +44,14 @@ class EmployeeTest {
         // Assert
         assertEquals(expectedHoursWorked, employee.getHoursWorked());
     }
+
+    @Test
+    public void punchTimeCard_should_updatePunchedIn() {
+        Employee employee = new Employee("001", "Jane Doe", "Hospitality", 20.00, 0);
+        boolean expectedPunchedIn = true;
+
+        employee.punchTimeCard();
+
+        assertTrue(employee.getPunchedIn());
+    }
 }
