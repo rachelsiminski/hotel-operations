@@ -57,22 +57,22 @@ class RoomTest {
         boolean expected = false;
 
         // Act
-        room.checkIn();
+        boolean actualCheckIn = room.checkIn();
 
         // Assert
-        assertEquals(expected, room.checkIn());
+        assertEquals(expected, actualCheckIn);
     }
 
     @Test
     public void checkIn_should_not_work_for_dirty_room() {
-        Room room = new Room(true, true, 139.00, 1);
+        Room room = new Room(true, false, 139.00, 1);
         boolean expected = false;
 
         // Act
-        room.checkIn();
+        boolean actualCheckIn = room.checkIn();
 
         // Assert
-        assertEquals(expected, room.checkIn());
+        assertEquals(expected, actualCheckIn);
     }
 
     @Test
@@ -81,10 +81,9 @@ class RoomTest {
         boolean expected = false;
 
         // Act
-        room.cleanRoom();
+        boolean actualCleanRoom = room.cleanRoom();
 
         // Assert
-        assertEquals(expected, room.cleanRoom());
+        assertEquals(expected, actualCleanRoom);
     }
-
 }

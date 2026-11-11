@@ -34,8 +34,8 @@ class EmployeeTest {
 
     @Test
     public void punchOut_should_update_hoursWorked() {
-        Employee employee = new Employee("001", "Jane Doe", "Hospitality", 20.00, 0);
-        double expectedHoursWorked = 8;
+        Employee employee = new Employee("001", "Jane Doe", "Hospitality", 20.00, 20);
+        double expectedHoursWorked = 28;
 
         // Act
         employee.punchIn(2);

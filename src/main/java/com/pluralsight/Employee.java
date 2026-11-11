@@ -103,11 +103,14 @@ public class Employee {
 
     public void punchTimeCard() {
         if (!punchedIn) {
-            LocalDateTime startTime = LocalDateTime.now();
+            LocalDateTime now = LocalDateTime.now();
             punchedIn = true;
+            startTime = now.getHour() + now.getMinute() / 60.0;
         } else {
-            LocalDateTime end = LocalDateTime.now();
+            LocalDateTime now = LocalDateTime.now();
             punchedIn = false;
+            double endTime = now.getHour() + now.getMinute() / 60.0;
+            hoursWorked += endTime - startTime;
         }
     }
 
